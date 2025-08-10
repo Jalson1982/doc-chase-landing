@@ -829,7 +829,7 @@ export default function Home() {
                 </button>
 
                 <p className="text-center text-sm text-blue-200">
-                  We'll only email about early access and product updates.
+                  We&apos;ll only email about early access and product updates.
                 </p>
               </form>
             </div>
