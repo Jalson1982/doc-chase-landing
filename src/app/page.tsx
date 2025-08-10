@@ -699,10 +699,26 @@ export default function Home() {
               <form
                 className="space-y-6"
                 method="POST"
-                action="#YOUR_FORM_ENDPOINT"
+                action="https://formspree.io/f/xdkobpvq"
               >
                 <input
-                  name="email"
+                  type="hidden"
+                  name="_to"
+                  value="jasmin.fajkic@gmail.com"
+                />
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="Doc-Chase Early Access Request"
+                />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://doc-chase-landing.vercel.app?submitted=true"
+                />
+
+                <input
+                  name="Work Email"
                   type="email"
                   required
                   placeholder="you@firm.com"
@@ -710,35 +726,35 @@ export default function Home() {
                 />
 
                 <input
-                  name="firm_size"
+                  name="Firm Size"
                   type="text"
                   placeholder="e.g., 1, 3, 7"
                   className="w-full rounded-xl border border-slate-600 bg-slate-800/50 text-white placeholder-slate-400 px-4 py-4 outline-none focus:ring-2 focus:ring-white/50"
                 />
 
                 <select
-                  name="primary_use_case"
+                  name="Primary Use Case"
                   className="w-full rounded-xl border border-slate-600 bg-slate-800/50 text-white px-4 py-4 outline-none focus:ring-2 focus:ring-white/50"
                 >
                   <option value="">Primary use case</option>
-                  <option value="monthly_close">Monthly Close</option>
-                  <option value="tax_package">Tax Package</option>
-                  <option value="new_client_setup">New Client Setup</option>
-                  <option value="audit_pbc">Audit PBC</option>
+                  <option value="Monthly Close">Monthly Close</option>
+                  <option value="Tax Package">Tax Package</option>
+                  <option value="New Client Setup">New Client Setup</option>
+                  <option value="Audit PBC">Audit PBC</option>
                 </select>
 
                 <select
-                  name="preferred_intake"
+                  name="Preferred Intake Method"
                   className="w-full rounded-xl border border-slate-600 bg-slate-800/50 text-white px-4 py-4 outline-none focus:ring-2 focus:ring-white/50"
                 >
                   <option value="">Preferred intake</option>
-                  <option value="email_inbox">Email inbox</option>
-                  <option value="link_upload">Link upload</option>
-                  <option value="both">Both</option>
+                  <option value="Email inbox">Email inbox</option>
+                  <option value="Link upload">Link upload</option>
+                  <option value="Both">Both</option>
                 </select>
 
                 <input
-                  name="documents"
+                  name="Document Types"
                   type="text"
                   placeholder="Invoices, statements, W-9…"
                   className="w-full rounded-xl border border-slate-600 bg-slate-800/50 text-white placeholder-slate-400 px-4 py-4 outline-none focus:ring-2 focus:ring-white/50"
