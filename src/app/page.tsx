@@ -715,13 +715,40 @@ export default function Home() {
                   button.textContent = "Sending...";
                   button.disabled = true;
 
-                                     emailjs
-                     .sendForm(
-                       "service_cnii2m8",
-                       "template_early_access",
-                       form,
-                       "i04J_Ve4Y0OODVSEn"
-                     )
+                  emailjs
+                    .send(
+                      "service_cnii2m8",
+                      "template_early_access",
+                      {
+                        work_email: (
+                          form.elements.namedItem(
+                            "work_email"
+                          ) as HTMLInputElement
+                        )?.value,
+                        firm_size: (
+                          form.elements.namedItem(
+                            "firm_size"
+                          ) as HTMLInputElement
+                        )?.value,
+                        primary_use_case: (
+                          form.elements.namedItem(
+                            "primary_use_case"
+                          ) as HTMLSelectElement
+                        )?.value,
+                        preferred_intake: (
+                          form.elements.namedItem(
+                            "preferred_intake"
+                          ) as HTMLSelectElement
+                        )?.value,
+                        document_types: (
+                          form.elements.namedItem(
+                            "document_types"
+                          ) as HTMLInputElement
+                        )?.value,
+                        from_name: "Doc-Chase Landing Page",
+                      },
+                      "i04J_Ve4Y0OODVSEn"
+                    )
                     .then(() => {
                       form.innerHTML = `
                       <div class="text-center p-8 rounded-xl border border-green-500/30 bg-green-500/10">
@@ -730,10 +757,17 @@ export default function Home() {
                       </div>
                     `;
                     })
-                    .catch(() => {
+                    .catch((error) => {
                       button.textContent = "Get Early Access";
                       button.disabled = false;
-                      alert("Something went wrong. Please try again.");
+                      console.error("EmailJS Error:", error);
+                      alert(
+                        `Error: ${
+                          error.text ||
+                          error.message ||
+                          "Something went wrong. Please try again."
+                        }`
+                      );
                     });
                 }}
               >
