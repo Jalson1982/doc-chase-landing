@@ -1,0 +1,107 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Firm {
+  id               String    @id @default(cuid())
+  name             String
+  users            User[]
+  clients          Client[]
+  checklists       Checklist[]
+  stripeCustomerId String?
+  createdAt        DateTime  @default(now())
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  firmId    String
+  firm      Firm     @relation(fields: [firmId], references: [id])
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+}
+
+model Client {
+  id         String      @id @default(cuid())
+  firmId     String
+  firm       Firm        @relation(fields: [firmId], references: [id])
+  name       String
+  email      String?
+  phone      String?
+  checklists Checklist[]
+  createdAt  DateTime    @default(now())
+}
+
+model Checklist {
+  id           String            @id @default(cuid())
+  firmId       String
+  clientId     String
+  firm         Firm              @relation(fields: [firmId], references: [id])
+  client       Client            @relation(fields: [clientId], references: [id])
+  title        String
+  dueDate      DateTime?
+  status       String            @default("open") // open|complete|archived
+  items        ChecklistItem[]
+  links        ClientLinkToken[]
+  reminderLogs ReminderLog[]
+  createdAt    DateTime          @default(now())
+}
+
+model ChecklistItem {
+  id           String   @id @default(cuid())
+  checklistId  String
+  checklist    Checklist @relation(fields: [checklistId], references: [id])
+  label        String
+  description  String?
+  required     Boolean  @default(true)
+  status       String   @default("pending") // pending|received|approved|rejected
+  uploadedId   String?  // last file id
+  uploads      Upload[]
+  createdAt    DateTime @default(now())
+}
+
+model Upload {
+  id              String   @id @default(cuid())
+  checklistItemId String
+  item            ChecklistItem @relation(fields: [checklistItemId], references: [id])
+  s3Key           String
+  filename        String
+  size            Int
+  mimeType        String
+  uploadedBy      String   // "client" | userId
+  createdAt       DateTime @default(now())
+}
+
+model ClientLinkToken {
+  id          String   @id @default(cuid())
+  checklistId String
+  checklist   Checklist @relation(fields: [checklistId], references: [id])
+  token       String   @unique
+  expiresAt   DateTime
+  createdAt   DateTime @default(now())
+}
+
+model ReminderLog {
+  id          String   @id @default(cuid())
+  checklistId String
+  checklist   Checklist @relation(fields: [checklistId], references: [id])
+  channel     String   // email|sms (future)
+  to          String
+  template    String
+  sentAt      DateTime @default(now())
+  status      String   // sent|failed
+  meta        Json?
+}

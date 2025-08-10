@@ -696,10 +696,52 @@ export default function Home() {
             </div>
 
             <div className="mt-12 max-w-lg mx-auto">
-              <div id="form-container">
-                <form className="space-y-6" id="waitlist-form">
+              <form
+                className="space-y-6"
+                id="waitlist-form"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const form = e.target as HTMLFormElement;
+                  const formData = new FormData(form);
+
+                  // Show loading state
+                  const button = form.querySelector(
+                    'button[type="submit"]'
+                  ) as HTMLButtonElement;
+                  button.textContent = "Sending...";
+                  button.disabled = true;
+
+                  // Send via EmailJS
+                  (window as any).emailjs
+                    .sendForm(
+                      "service_doc_chase",
+                      "template_early_access",
+                      form,
+                      "YOUR_PUBLIC_KEY"
+                    )
+                    .then(
+                      () => {
+                        // Success
+                        form.innerHTML = `
+                      <div class="text-center p-8 rounded-xl border border-green-500/30 bg-green-500/10">
+                        <div class="text-green-400 text-xl font-bold mb-2">Thank you!</div>
+                        <div class="text-slate-300">Your early access request has been sent. We'll be in touch soon!</div>
+                      </div>
+                    `;
+                      },
+                      () => {
+                        // Error
+                        button.textContent = "Get Early Access";
+                        button.disabled = false;
+                        alert(
+                          "Something went wrong. Please try again or email us directly at jasmin.fajkic@gmail.com"
+                        );
+                      }
+                    );
+                }}
+              >
                 <input
-                  name="Work Email"
+                  name="work_email"
                   type="email"
                   required
                   placeholder="you@firm.com"
@@ -707,14 +749,14 @@ export default function Home() {
                 />
 
                 <input
-                  name="Firm Size"
+                  name="firm_size"
                   type="text"
                   placeholder="e.g., 1, 3, 7"
                   className="w-full rounded-xl border border-slate-600 bg-slate-800/50 text-white placeholder-slate-400 px-4 py-4 outline-none focus:ring-2 focus:ring-white/50"
                 />
 
                 <select
-                  name="Primary Use Case"
+                  name="primary_use_case"
                   className="w-full rounded-xl border border-slate-600 bg-slate-800/50 text-white px-4 py-4 outline-none focus:ring-2 focus:ring-white/50"
                 >
                   <option value="">Primary use case</option>
@@ -725,7 +767,7 @@ export default function Home() {
                 </select>
 
                 <select
-                  name="Preferred Intake Method"
+                  name="preferred_intake"
                   className="w-full rounded-xl border border-slate-600 bg-slate-800/50 text-white px-4 py-4 outline-none focus:ring-2 focus:ring-white/50"
                 >
                   <option value="">Preferred intake</option>
@@ -735,7 +777,7 @@ export default function Home() {
                 </select>
 
                 <input
-                  name="Document Types"
+                  name="document_types"
                   type="text"
                   placeholder="Invoices, statements, W-9…"
                   className="w-full rounded-xl border border-slate-600 bg-slate-800/50 text-white placeholder-slate-400 px-4 py-4 outline-none focus:ring-2 focus:ring-white/50"
@@ -743,53 +785,15 @@ export default function Home() {
 
                 <button
                   type="submit"
-                  className="w-full rounded-xl bg-white text-blue-600 px-8 py-4 text-lg font-bold transition-all hover:bg-blue-50 hover:scale-105"
+                  className="w-full rounded-xl bg-white text-blue-600 px-8 py-4 text-lg font-bold transition-all hover:bg-blue-50 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Get Early Access
                 </button>
 
                 <p className="text-center text-sm text-blue-200">
-                  We&apos;ll only email about early access and product updates.
+                  We'll only email about early access and product updates.
                 </p>
-                </form>
-              </div>
-
-              <script dangerouslySetInnerHTML={{
-                __html: `
-                  document.getElementById('waitlist-form').addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const formData = new FormData(e.target);
-                    const email = formData.get('Work Email') || '';
-                    const firmSize = formData.get('Firm Size') || '';
-                    const useCase = formData.get('Primary Use Case') || '';
-                    const intake = formData.get('Preferred Intake Method') || '';
-                    const docs = formData.get('Document Types') || '';
-                    
-                    const subject = 'Doc-Chase Early Access Request';
-                    const body = \`New early access request:
-
-Work Email: \${email}
-Firm Size: \${firmSize}
-Primary Use Case: \${useCase}
-Preferred Intake: \${intake}
-Document Types: \${docs}
-
-Submitted from: \${window.location.href}\`;
-                    
-                    const mailtoLink = \`mailto:jasmin.fajkic@gmail.com?subject=\${encodeURIComponent(subject)}&body=\${encodeURIComponent(body)}\`;
-                    window.open(mailtoLink);
-                    
-                    // Show success message
-                    document.getElementById('form-container').innerHTML = \`
-                      <div class="text-center p-8 rounded-xl border border-green-500/30 bg-green-500/10">
-                        <div class="text-green-400 text-xl font-bold mb-2">Thank you!</div>
-                        <div class="text-slate-300">Your email client should open with your request. Please send the email to complete your early access request.</div>
-                      </div>
-                    \`;
-                  });
-                `
-              }} />
+              </form>
             </div>
           </div>
         </div>
