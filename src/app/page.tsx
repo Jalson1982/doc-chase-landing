@@ -715,10 +715,10 @@ export default function Home() {
                   button.textContent = "Sending...";
                   button.disabled = true;
 
-                  emailjs
-                    .send(
-                      "service_cnii2m8",
-                      "template_early_access",
+                                     emailjs
+                     .send(
+                       "service_cnii2m8",
+                       "template_1",
                       {
                         work_email: (
                           form.elements.namedItem(
