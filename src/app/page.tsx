@@ -717,17 +717,41 @@ export default function Home() {
 
                   emailjs
                     .send(
-                      "service_cnii2m8",
+                      "service_v5epier",
                       "template_ujs9f97",
                       {
                         to_email: "jasmin.fajkic@gmail.com",
                         to_name: "Jasmin",
-                        user_email: (form.elements.namedItem("work_email") as HTMLInputElement)?.value,
-                        email: (form.elements.namedItem("work_email") as HTMLInputElement)?.value,
-                        firm_size: (form.elements.namedItem("firm_size") as HTMLInputElement)?.value,
-                        primary_use_case: (form.elements.namedItem("primary_use_case") as HTMLSelectElement)?.value,
-                        preferred_intake: (form.elements.namedItem("preferred_intake") as HTMLSelectElement)?.value,
-                        document_types: (form.elements.namedItem("document_types") as HTMLInputElement)?.value,
+                        user_email: (
+                          form.elements.namedItem(
+                            "work_email"
+                          ) as HTMLInputElement
+                        )?.value,
+                        email: (
+                          form.elements.namedItem(
+                            "work_email"
+                          ) as HTMLInputElement
+                        )?.value,
+                        firm_size: (
+                          form.elements.namedItem(
+                            "firm_size"
+                          ) as HTMLInputElement
+                        )?.value,
+                        primary_use_case: (
+                          form.elements.namedItem(
+                            "primary_use_case"
+                          ) as HTMLSelectElement
+                        )?.value,
+                        preferred_intake: (
+                          form.elements.namedItem(
+                            "preferred_intake"
+                          ) as HTMLSelectElement
+                        )?.value,
+                        document_types: (
+                          form.elements.namedItem(
+                            "document_types"
+                          ) as HTMLInputElement
+                        )?.value,
                         submission_date: new Date().toLocaleString(),
                       },
                       "i04J_Ve4Y0OODVSEn"
