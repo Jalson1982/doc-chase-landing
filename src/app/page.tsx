@@ -696,27 +696,8 @@ export default function Home() {
             </div>
 
             <div className="mt-12 max-w-lg mx-auto">
-              <form
-                className="space-y-6"
-                method="POST"
-                action="https://formspree.io/f/xdkobpvq"
-              >
-                <input
-                  type="hidden"
-                  name="_to"
-                  value="jasmin.fajkic@gmail.com"
-                />
-                <input
-                  type="hidden"
-                  name="_subject"
-                  value="Doc-Chase Early Access Request"
-                />
-                <input
-                  type="hidden"
-                  name="_next"
-                  value="https://doc-chase-landing.vercel.app?submitted=true"
-                />
-
+              <div id="form-container">
+                <form className="space-y-6" id="waitlist-form">
                 <input
                   name="Work Email"
                   type="email"
@@ -770,7 +751,45 @@ export default function Home() {
                 <p className="text-center text-sm text-blue-200">
                   We&apos;ll only email about early access and product updates.
                 </p>
-              </form>
+                </form>
+              </div>
+
+              <script dangerouslySetInnerHTML={{
+                __html: `
+                  document.getElementById('waitlist-form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(e.target);
+                    const email = formData.get('Work Email') || '';
+                    const firmSize = formData.get('Firm Size') || '';
+                    const useCase = formData.get('Primary Use Case') || '';
+                    const intake = formData.get('Preferred Intake Method') || '';
+                    const docs = formData.get('Document Types') || '';
+                    
+                    const subject = 'Doc-Chase Early Access Request';
+                    const body = \`New early access request:
+
+Work Email: \${email}
+Firm Size: \${firmSize}
+Primary Use Case: \${useCase}
+Preferred Intake: \${intake}
+Document Types: \${docs}
+
+Submitted from: \${window.location.href}\`;
+                    
+                    const mailtoLink = \`mailto:jasmin.fajkic@gmail.com?subject=\${encodeURIComponent(subject)}&body=\${encodeURIComponent(body)}\`;
+                    window.open(mailtoLink);
+                    
+                    // Show success message
+                    document.getElementById('form-container').innerHTML = \`
+                      <div class="text-center p-8 rounded-xl border border-green-500/30 bg-green-500/10">
+                        <div class="text-green-400 text-xl font-bold mb-2">Thank you!</div>
+                        <div class="text-slate-300">Your email client should open with your request. Please send the email to complete your early access request.</div>
+                      </div>
+                    \`;
+                  });
+                `
+              }} />
             </div>
           </div>
         </div>
