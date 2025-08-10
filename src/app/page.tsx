@@ -1,3 +1,7 @@
+"use client";
+
+import emailjs from "@emailjs/browser";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
@@ -702,42 +706,33 @@ export default function Home() {
                 onSubmit={(e) => {
                   e.preventDefault();
                   const form = e.target as HTMLFormElement;
-                  const formData = new FormData(form);
-
-                  // Show loading state
                   const button = form.querySelector(
                     'button[type="submit"]'
                   ) as HTMLButtonElement;
+
                   button.textContent = "Sending...";
                   button.disabled = true;
 
-                  // Send via EmailJS
-                  (window as any).emailjs
+                  emailjs
                     .sendForm(
-                      "service_doc_chase",
+                      "service_cnii2m8",
                       "template_early_access",
                       form,
                       "YOUR_PUBLIC_KEY"
                     )
-                    .then(
-                      () => {
-                        // Success
-                        form.innerHTML = `
+                    .then(() => {
+                      form.innerHTML = `
                       <div class="text-center p-8 rounded-xl border border-green-500/30 bg-green-500/10">
                         <div class="text-green-400 text-xl font-bold mb-2">Thank you!</div>
                         <div class="text-slate-300">Your early access request has been sent. We'll be in touch soon!</div>
                       </div>
                     `;
-                      },
-                      () => {
-                        // Error
-                        button.textContent = "Get Early Access";
-                        button.disabled = false;
-                        alert(
-                          "Something went wrong. Please try again or email us directly at jasmin.fajkic@gmail.com"
-                        );
-                      }
-                    );
+                    })
+                    .catch(() => {
+                      button.textContent = "Get Early Access";
+                      button.disabled = false;
+                      alert("Something went wrong. Please try again.");
+                    });
                 }}
               >
                 <input
