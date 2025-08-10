@@ -720,6 +720,8 @@ export default function Home() {
                       "service_cnii2m8",
                       "template_ujs9f97",
                       {
+                        to_email: "jasmin.fajkic@gmail.com",
+                        to_name: "Jasmin",
                         user_email: (
                           form.elements.namedItem(
                             "work_email"
