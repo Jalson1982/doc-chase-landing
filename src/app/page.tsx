@@ -2,6 +2,8 @@
 
 import emailjs from "@emailjs/browser";
 
+emailjs.init("i04J_Ve4Y0OODVSEn");
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
@@ -713,13 +715,13 @@ export default function Home() {
                   button.textContent = "Sending...";
                   button.disabled = true;
 
-                  emailjs
-                    .sendForm(
-                      "service_cnii2m8",
-                      "template_early_access",
-                      form,
-                      "YOUR_PUBLIC_KEY"
-                    )
+                                     emailjs
+                     .sendForm(
+                       "service_cnii2m8",
+                       "template_early_access",
+                       form,
+                       "i04J_Ve4Y0OODVSEn"
+                     )
                     .then(() => {
                       form.innerHTML = `
                       <div class="text-center p-8 rounded-xl border border-green-500/30 bg-green-500/10">
