@@ -720,35 +720,23 @@ export default function Home() {
                        "service_cnii2m8",
                        "template_1",
                       {
-                        work_email: (
-                          form.elements.namedItem(
-                            "work_email"
-                          ) as HTMLInputElement
-                        )?.value,
-                        firm_size: (
-                          form.elements.namedItem(
-                            "firm_size"
-                          ) as HTMLInputElement
-                        )?.value,
-                        primary_use_case: (
-                          form.elements.namedItem(
-                            "primary_use_case"
-                          ) as HTMLSelectElement
-                        )?.value,
-                        preferred_intake: (
-                          form.elements.namedItem(
-                            "preferred_intake"
-                          ) as HTMLSelectElement
-                        )?.value,
-                        document_types: (
-                          form.elements.namedItem(
-                            "document_types"
-                          ) as HTMLInputElement
-                        )?.value,
-                        from_name: "Doc-Chase Landing Page",
+                        name: (form.elements.namedItem("work_email") as HTMLInputElement)?.value,
+                        title: `Doc-Chase Early Access Request - ${(form.elements.namedItem("primary_use_case") as HTMLSelectElement)?.value || "General"}`,
+                        work_email: (form.elements.namedItem("work_email") as HTMLInputElement)?.value,
+                        firm_size: (form.elements.namedItem("firm_size") as HTMLInputElement)?.value,
+                        primary_use_case: (form.elements.namedItem("primary_use_case") as HTMLSelectElement)?.value,
+                        preferred_intake: (form.elements.namedItem("preferred_intake") as HTMLSelectElement)?.value,
+                        document_types: (form.elements.namedItem("document_types") as HTMLInputElement)?.value,
+                        message: `
+Work Email: ${(form.elements.namedItem("work_email") as HTMLInputElement)?.value}
+Firm Size: ${(form.elements.namedItem("firm_size") as HTMLInputElement)?.value}
+Primary Use Case: ${(form.elements.namedItem("primary_use_case") as HTMLSelectElement)?.value}
+Preferred Intake: ${(form.elements.namedItem("preferred_intake") as HTMLSelectElement)?.value}
+Document Types: ${(form.elements.namedItem("document_types") as HTMLInputElement)?.value}
+                        `.trim(),
                       },
-                      "i04J_Ve4Y0OODVSEn"
-                    )
+                       "i04J_Ve4Y0OODVSEn"
+                     )
                     .then(() => {
                       form.innerHTML = `
                       <div class="text-center p-8 rounded-xl border border-green-500/30 bg-green-500/10">
