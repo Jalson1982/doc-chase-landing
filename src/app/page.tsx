@@ -450,7 +450,7 @@ export default function Home() {
           {/* Background Elements */}
           <div className="absolute -top-40 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-40 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-full blur-3xl"></div>
-          
+
           <div className="relative max-w-7xl mx-auto">
             <div className="text-center mb-20">
               <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-500/30 backdrop-blur-sm mb-8">
@@ -465,7 +465,8 @@ export default function Home() {
                 </span>
               </h2>
               <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-                Each client gets a unique email address. They forward attachments, we organize everything automatically.
+                Each client gets a unique email address. They forward
+                attachments, we organize everything automatically.
               </p>
             </div>
 
@@ -473,69 +474,86 @@ export default function Home() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-cyan-500/5 rounded-3xl blur-3xl"></div>
               <div className="relative bg-gradient-to-br from-slate-900/90 to-purple-950/20 backdrop-blur-xl border border-purple-500/20 rounded-3xl p-12">
-                
-                {/* Flow Steps */}
-                <div className="grid lg:grid-cols-4 gap-8 mb-16">
-                  {[
-                    {
-                      step: "01",
-                      title: "Unique Address",
-                      desc: "client@upload.docchase.app",
-                      icon: "📧",
-                      gradient: "from-purple-500/20 to-pink-500/20"
-                    },
-                    {
-                      step: "02", 
-                      title: "Client Forwards",
-                      desc: "Attachments extracted automatically",
-                      icon: "↗️",
-                      gradient: "from-pink-500/20 to-cyan-500/20"
-                    },
-                    {
-                      step: "03",
-                      title: "Smart Filing",
-                      desc: "Auto-categorized by AI matching",
-                      icon: "🎯",
-                      gradient: "from-cyan-500/20 to-blue-500/20"
-                    },
-                    {
-                      step: "04",
-                      title: "You're Notified",
-                      desc: "Real-time updates in your dashboard",
-                      icon: "✨",
-                      gradient: "from-blue-500/20 to-purple-500/20"
-                    }
-                  ].map((item, index) => (
-                    <div key={index} className="group relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-slate-800/30 to-slate-900/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                      <div className={`relative bg-gradient-to-br ${item.gradient} backdrop-blur-xl border border-purple-500/20 rounded-2xl p-6 hover:border-purple-400/30 transition-all duration-300 hover:-translate-y-2`}>
-                        <div className="flex items-center justify-between mb-4">
-                          <div className="text-3xl">{item.icon}</div>
-                          <div className="text-purple-300 font-bold text-sm">{item.step}</div>
+                                  {/* Flow Steps */}
+                  <div className="grid lg:grid-cols-4 gap-8 mb-16">
+                    {[
+                      {
+                        step: "01",
+                        title: "Unique Address",
+                        desc: "Each client gets their own email address",
+                        icon: "📧",
+                        gradient: "from-purple-500/20 to-pink-500/20",
+                      },
+                      {
+                        step: "02",
+                        title: "Client Forwards",
+                        desc: "Attachments extracted automatically from emails",
+                        icon: "↗️",
+                        gradient: "from-pink-500/20 to-cyan-500/20",
+                      },
+                      {
+                        step: "03",
+                        title: "Smart Filing",
+                        desc: "Auto-categorized by AI matching algorithms",
+                        icon: "🎯",
+                        gradient: "from-cyan-500/20 to-blue-500/20",
+                      },
+                      {
+                        step: "04",
+                        title: "You're Notified",
+                        desc: "Real-time updates appear in your dashboard",
+                        icon: "✨",
+                        gradient: "from-blue-500/20 to-purple-500/20",
+                      },
+                    ].map((item, index) => (
+                      <div key={index} className="group relative h-full">
+                        <div className="absolute inset-0 bg-gradient-to-br from-slate-800/30 to-slate-900/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                        <div
+                          className={`relative bg-gradient-to-br ${item.gradient} backdrop-blur-xl border border-purple-500/20 rounded-2xl p-6 hover:border-purple-400/30 transition-all duration-300 hover:-translate-y-2 h-full flex flex-col`}
+                        >
+                          <div className="flex items-center justify-between mb-6">
+                            <div className="text-3xl">{item.icon}</div>
+                            <div className="text-purple-300 font-bold text-sm">
+                              {item.step}
+                            </div>
+                          </div>
+                          <div className="flex-1 flex flex-col justify-center">
+                            <h3 className="text-lg font-bold text-white mb-3">
+                              {item.title}
+                            </h3>
+                            <p className="text-slate-300 text-sm leading-relaxed">
+                              {item.desc}
+                            </p>
+                          </div>
                         </div>
-                        <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                        <p className="text-slate-300 text-sm leading-relaxed">{item.desc}</p>
                       </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
 
                 {/* Key Features */}
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="space-y-6">
                     <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
                       <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full flex items-center justify-center mr-3">
-                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                        <svg
+                          className="w-4 h-4 text-white"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
                         </svg>
                       </div>
                       Smart Features
                     </h3>
                     {[
                       "Attachments only (email body ignored)",
-                      "Auto-file to correct request/month", 
+                      "Auto-file to correct request/month",
                       "Allowlist approved senders",
-                      "Polite rejection for unauthorized emails"
+                      "Polite rejection for unauthorized emails",
                     ].map((feature, index) => (
                       <div key={index} className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
@@ -551,18 +569,38 @@ export default function Home() {
                         <div className="w-3 h-3 bg-green-400 rounded-full mr-2"></div>
                         <div className="w-3 h-3 bg-yellow-400 rounded-full mr-2"></div>
                         <div className="w-3 h-3 bg-red-400 rounded-full mr-4"></div>
-                        <span className="text-slate-400 text-sm">Email Example</span>
+                        <span className="text-slate-400 text-sm">
+                          Email Example
+                        </span>
                       </div>
                       <div className="bg-slate-900/80 rounded-lg p-4 font-mono text-sm">
-                        <div className="text-slate-400 mb-2">To: <span className="text-cyan-400">client@upload.docchase.app</span></div>
-                        <div className="text-slate-400 mb-2">From: john@clientfirm.com</div>
-                        <div className="text-slate-400 mb-4">Subject: Tax documents Q4</div>
-                        <div className="text-slate-300 mb-4">Hi, here are the requested documents...</div>
-                        <div className="bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded p-2">
-                          <div className="text-purple-300">📎 tax-return-2024.pdf</div>
-                          <div className="text-purple-300">📎 receipts-q4.xlsx</div>
+                        <div className="text-slate-400 mb-2">
+                          To:{" "}
+                          <span className="text-cyan-400">
+                            client@upload.docchase.app
+                          </span>
                         </div>
-                        <div className="text-green-400 text-xs mt-2">✓ Automatically filed to &quot;Tax Documents&quot; checklist</div>
+                        <div className="text-slate-400 mb-2">
+                          From: john@clientfirm.com
+                        </div>
+                        <div className="text-slate-400 mb-4">
+                          Subject: Tax documents Q4
+                        </div>
+                        <div className="text-slate-300 mb-4">
+                          Hi, here are the requested documents...
+                        </div>
+                        <div className="bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded p-2">
+                          <div className="text-purple-300">
+                            📎 tax-return-2024.pdf
+                          </div>
+                          <div className="text-purple-300">
+                            📎 receipts-q4.xlsx
+                          </div>
+                        </div>
+                        <div className="text-green-400 text-xs mt-2">
+                          ✓ Automatically filed to &quot;Tax Documents&quot;
+                          checklist
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -571,8 +609,16 @@ export default function Home() {
                 {/* Optional Note */}
                 <div className="mt-12 text-center">
                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-slate-800/50 border border-slate-600/50 text-slate-400 text-sm">
-                    <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd"/>
+                    <svg
+                      className="w-4 h-4 mr-2"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     Prefer link-only? Turn email forwarding off per client
                   </div>
@@ -721,7 +767,7 @@ export default function Home() {
           {/* Background Elements */}
           <div className="absolute -top-32 left-1/3 w-72 h-72 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute -bottom-32 right-1/3 w-80 h-80 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          
+
           <div className="relative max-w-7xl mx-auto">
             <div className="text-center mb-20">
               <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 backdrop-blur-sm mb-8">
@@ -736,57 +782,64 @@ export default function Home() {
                 </span>
               </h2>
               <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-                People snap photos, not scans. We optimize everything automatically so documents look professional.
+                People snap photos, not scans. We optimize everything
+                automatically so documents look professional.
               </p>
             </div>
 
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-emerald-500/5 rounded-3xl blur-3xl"></div>
               <div className="relative bg-gradient-to-br from-slate-900/90 to-green-950/20 backdrop-blur-xl border border-green-500/20 rounded-3xl p-12">
-                
                 {/* Mobile Features Grid */}
                 <div className="grid lg:grid-cols-2 gap-12 mb-16">
-                  
                   {/* Left: Features */}
                   <div className="space-y-8">
                     <h3 className="text-3xl font-bold text-white mb-8 flex items-center">
                       <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mr-4">
-                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        <svg
+                          className="w-5 h-5 text-white"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
                         </svg>
                       </div>
                       Smart Capture
                     </h3>
-                    
+
                     {[
                       {
                         title: "One-tap camera access",
                         desc: "Open camera directly from the link—no app downloads",
-                        icon: "📱"
+                        icon: "📱",
                       },
                       {
                         title: "Multi-page documents",
                         desc: "Snap multiple pages, we stitch them together automatically",
-                        icon: "📄"
+                        icon: "📄",
                       },
                       {
                         title: "Auto-optimization",
                         desc: "Crop, deskew, compress—photos become professional PDFs",
-                        icon: "✨"
+                        icon: "✨",
                       },
                       {
                         title: "Privacy-first",
                         desc: "EXIF data stripped automatically, location data removed",
-                        icon: "🔒"
-                      }
+                        icon: "🔒",
+                      },
                     ].map((feature, index) => (
                       <div key={index} className="group relative">
                         <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
                         <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-green-500/20 rounded-2xl p-6 hover:border-green-400/30 transition-all duration-300">
                           <div className="flex items-start space-x-4">
-                            <div className="text-3xl flex-shrink-0">{feature.icon}</div>
+                            <div className="text-3xl flex-shrink-0">
+                              {feature.icon}
+                            </div>
                             <div>
-                              <h4 className="text-lg font-bold text-white mb-2">{feature.title}</h4>
+                              <h4 className="text-lg font-bold text-white mb-2">
+                                {feature.title}
+                              </h4>
                               <p className="text-slate-300">{feature.desc}</p>
                             </div>
                           </div>
@@ -809,23 +862,46 @@ export default function Home() {
                                 <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                               </div>
-                              <span className="text-white text-sm">Upload Link</span>
+                              <span className="text-white text-sm">
+                                Upload Link
+                              </span>
                             </div>
-                            
+
                             <div className="space-y-4">
                               <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-xl p-4">
-                                <h4 className="text-white font-semibold mb-2">📄 Tax Documents</h4>
-                                <p className="text-slate-300 text-sm">Upload your 2024 tax return</p>
+                                <h4 className="text-white font-semibold mb-2">
+                                  📄 Tax Documents
+                                </h4>
+                                <p className="text-slate-300 text-sm">
+                                  Upload your 2024 tax return
+                                </p>
                               </div>
-                              
+
                               <div className="bg-slate-800/50 border border-slate-600 rounded-xl p-4 flex items-center justify-center space-x-3">
-                                <svg className="w-8 h-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <svg
+                                  className="w-8 h-8 text-green-400"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                                  />
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
+                                  />
                                 </svg>
-                                <span className="text-white font-medium">Take Photo</span>
+                                <span className="text-white font-medium">
+                                  Take Photo
+                                </span>
                               </div>
-                              
+
                               <div className="text-center">
                                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-xs">
                                   <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
@@ -843,19 +919,37 @@ export default function Home() {
                 {/* Bottom Stats */}
                 <div className="grid md:grid-cols-3 gap-6 pt-12 border-t border-slate-700/50">
                   <div className="text-center">
-                    <div className="text-3xl font-black text-green-400 mb-2">📱</div>
-                    <div className="text-white font-semibold">Works on any device</div>
-                    <div className="text-slate-400 text-sm">iOS, Android, Desktop</div>
+                    <div className="text-3xl font-black text-green-400 mb-2">
+                      📱
+                    </div>
+                    <div className="text-white font-semibold">
+                      Works on any device
+                    </div>
+                    <div className="text-slate-400 text-sm">
+                      iOS, Android, Desktop
+                    </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-black text-emerald-400 mb-2">⚡</div>
-                    <div className="text-white font-semibold">Instant processing</div>
-                    <div className="text-slate-400 text-sm">Real-time optimization</div>
+                    <div className="text-3xl font-black text-emerald-400 mb-2">
+                      ⚡
+                    </div>
+                    <div className="text-white font-semibold">
+                      Instant processing
+                    </div>
+                    <div className="text-slate-400 text-sm">
+                      Real-time optimization
+                    </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-black text-teal-400 mb-2">🔒</div>
-                    <div className="text-white font-semibold">Privacy protected</div>
-                    <div className="text-slate-400 text-sm">No metadata stored</div>
+                    <div className="text-3xl font-black text-teal-400 mb-2">
+                      🔒
+                    </div>
+                    <div className="text-white font-semibold">
+                      Privacy protected
+                    </div>
+                    <div className="text-slate-400 text-sm">
+                      No metadata stored
+                    </div>
                   </div>
                 </div>
               </div>
@@ -868,12 +962,14 @@ export default function Home() {
           {/* Background Elements */}
           <div className="absolute -top-40 left-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute -bottom-40 right-1/4 w-80 h-80 bg-gradient-to-r from-red-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse delay-500"></div>
-          
+
           <div className="relative max-w-7xl mx-auto">
             <div className="text-center mb-20">
               <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-500/30 backdrop-blur-sm mb-8">
                 <div className="w-2 h-2 bg-orange-400 rounded-full mr-3 animate-pulse"></div>
-                <span className="text-orange-300 font-medium">The Difference</span>
+                <span className="text-orange-300 font-medium">
+                  The Difference
+                </span>
               </div>
               <h2 className="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
                 Why every alternative
@@ -883,51 +979,75 @@ export default function Home() {
                 </span>
               </h2>
               <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-                We built Doc-Chase because existing solutions create more problems than they solve.
+                We built Doc-Chase because existing solutions create more
+                problems than they solve.
               </p>
             </div>
 
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-red-500/5 rounded-3xl blur-3xl"></div>
               <div className="relative bg-gradient-to-br from-slate-900/90 to-red-950/20 backdrop-blur-xl border border-red-500/20 rounded-3xl p-12">
-                
                 {/* Problem Solutions Grid */}
                 <div className="grid lg:grid-cols-3 gap-8 mb-16">
                   {[
                     {
                       method: "Email alone",
-                      problems: ["Threads get messy", "Attachments get lost", "No tracking", "Manual follow-ups"],
+                      problems: [
+                        "Threads get messy",
+                        "Attachments get lost",
+                        "No tracking",
+                        "Manual follow-ups",
+                      ],
                       icon: "📧",
                       gradient: "from-red-500/20 to-pink-500/20",
-                      accent: "border-red-500/30"
+                      accent: "border-red-500/30",
                     },
                     {
-                      method: "Shared drives", 
-                      problems: ["No visibility", "No reminders", "Permission chaos", "Version confusion"],
+                      method: "Shared drives",
+                      problems: [
+                        "No visibility",
+                        "No reminders",
+                        "Permission chaos",
+                        "Version confusion",
+                      ],
                       icon: "📁",
                       gradient: "from-orange-500/20 to-red-500/20",
-                      accent: "border-orange-500/30"
+                      accent: "border-orange-500/30",
                     },
                     {
                       method: "Client portals",
-                      problems: ["Forgotten logins", "Training required", "Low adoption", "Support tickets"],
+                      problems: [
+                        "Forgotten logins",
+                        "Training required",
+                        "Low adoption",
+                        "Support tickets",
+                      ],
                       icon: "🔐",
                       gradient: "from-pink-500/20 to-orange-500/20",
-                      accent: "border-pink-500/30"
-                    }
+                      accent: "border-pink-500/30",
+                    },
                   ].map((item, index) => (
                     <div key={index} className="group relative">
                       <div className="absolute inset-0 bg-gradient-to-br from-slate-800/30 to-slate-900/30 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                      <div className={`relative bg-gradient-to-br ${item.gradient} backdrop-blur-xl border ${item.accent} rounded-3xl p-8 hover:border-opacity-50 transition-all duration-300`}>
+                      <div
+                        className={`relative bg-gradient-to-br ${item.gradient} backdrop-blur-xl border ${item.accent} rounded-3xl p-8 hover:border-opacity-50 transition-all duration-300`}
+                      >
                         <div className="text-center mb-6">
                           <div className="text-4xl mb-4">{item.icon}</div>
-                          <h3 className="text-xl font-bold text-white">{item.method}</h3>
+                          <h3 className="text-xl font-bold text-white">
+                            {item.method}
+                          </h3>
                         </div>
                         <div className="space-y-3">
                           {item.problems.map((problem, pIndex) => (
-                            <div key={pIndex} className="flex items-start space-x-3">
+                            <div
+                              key={pIndex}
+                              className="flex items-start space-x-3"
+                            >
                               <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                              <p className="text-slate-300 text-sm">{problem}</p>
+                              <p className="text-slate-300 text-sm">
+                                {problem}
+                              </p>
                             </div>
                           ))}
                         </div>
@@ -942,25 +1062,55 @@ export default function Home() {
                   <div className="relative bg-gradient-to-br from-green-950/30 to-emerald-950/30 backdrop-blur-xl border border-green-500/30 rounded-2xl p-8">
                     <div className="text-center mb-8">
                       <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/20 border border-green-500/30 text-green-400 text-sm font-medium mb-4">
-                        <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                        <svg
+                          className="w-4 h-4 mr-2"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
                         </svg>
                         Doc-Chase Solution
                       </div>
-                      <h3 className="text-2xl font-bold text-white mb-4">The best of all worlds</h3>
+                      <h3 className="text-2xl font-bold text-white mb-4">
+                        The best of all worlds
+                      </h3>
                     </div>
-                    
+
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                       {[
-                        { title: "Zero friction", desc: "No logins, no training, just share a link", icon: "🔗" },
-                        { title: "Full visibility", desc: "See what's missing, who needs nudging", icon: "👀" },
-                        { title: "Auto reminders", desc: "Smart follow-ups without the manual work", icon: "⏰" },
-                        { title: "Professional results", desc: "Organized exports, happy clients", icon: "✨" }
+                        {
+                          title: "Zero friction",
+                          desc: "No logins, no training, just share a link",
+                          icon: "🔗",
+                        },
+                        {
+                          title: "Full visibility",
+                          desc: "See what's missing, who needs nudging",
+                          icon: "👀",
+                        },
+                        {
+                          title: "Auto reminders",
+                          desc: "Smart follow-ups without the manual work",
+                          icon: "⏰",
+                        },
+                        {
+                          title: "Professional results",
+                          desc: "Organized exports, happy clients",
+                          icon: "✨",
+                        },
                       ].map((benefit, index) => (
                         <div key={index} className="text-center">
                           <div className="text-3xl mb-3">{benefit.icon}</div>
-                          <h4 className="text-white font-semibold mb-2">{benefit.title}</h4>
-                          <p className="text-green-300 text-sm">{benefit.desc}</p>
+                          <h4 className="text-white font-semibold mb-2">
+                            {benefit.title}
+                          </h4>
+                          <p className="text-green-300 text-sm">
+                            {benefit.desc}
+                          </p>
                         </div>
                       ))}
                     </div>
@@ -970,10 +1120,20 @@ export default function Home() {
                 {/* Bottom CTA */}
                 <div className="mt-12 text-center">
                   <div className="inline-flex items-center px-6 py-3 rounded-full bg-slate-800/50 border border-slate-600/50 text-slate-300">
-                    <svg className="w-5 h-5 mr-3 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                    <svg
+                      className="w-5 h-5 mr-3 text-green-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
                     </svg>
-                    <span className="font-medium">Finally, a solution that actually works</span>
+                    <span className="font-medium">
+                      Finally, a solution that actually works
+                    </span>
                   </div>
                 </div>
               </div>
