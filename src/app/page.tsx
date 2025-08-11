@@ -68,115 +68,167 @@ export default function Home() {
         </div>
 
         {/* Problem Section */}
-        <div className="mt-32">
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 to-orange-500/5 rounded-3xl blur-3xl"></div>
-            <div className="relative bg-gradient-to-br from-slate-900/80 to-slate-800/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-12">
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-medium mb-6">
-                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
-                  </svg>
-                  The Problem
-                </div>
-                <h2 className="text-4xl font-bold text-white mb-8">
-                  Document collection is broken
-                </h2>
-              </div>
-              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                      <svg className="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"/>
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">Time wasted chasing</h3>
-                      <p className="text-slate-300">Email threads get messy, things go missing, deadlines slip.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                      <svg className="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"/>
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">Portals don&apos;t work</h3>
-                      <p className="text-slate-300">Clients forget logins, training is required, adoption is low.</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                      <svg className="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"/>
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">No visibility</h3>
-                      <p className="text-slate-300">You can&apos;t see what&apos;s missing or who needs a nudge.</p>
-                    </div>
-                  </div>
-                  <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/20 rounded-xl p-4">
-                    <div className="flex items-center space-x-3">
-                      <svg className="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
-                      </svg>
-                      <span className="text-red-400 font-semibold">Result: Late projects, rework, frustrated teams</span>
-                    </div>
+        <div className="mt-32 relative">
+          {/* Floating elements */}
+          <div className="absolute -top-20 left-1/4 w-32 h-32 bg-red-500/10 rounded-full blur-2xl animate-pulse"></div>
+          <div className="absolute -bottom-20 right-1/4 w-40 h-40 bg-orange-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-red-500/20 to-orange-500/20 border border-red-500/30 backdrop-blur-sm mb-8">
+              <div className="w-2 h-2 bg-red-400 rounded-full mr-3 animate-ping"></div>
+              <span className="text-red-300 font-medium">Current Reality</span>
+            </div>
+            <h2 className="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+              Document collection
+              <br />
+              <span className="bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
+                is broken
+              </span>
+            </h2>
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+              Teams waste hours chasing files while deadlines slip away
+            </p>
+          </div>
+
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Pain Point Cards */}
+              {[
+                {
+                  title: "Endless email chains",
+                  desc: "Threads get messy, attachments get lost, context disappears",
+                  icon: "📧",
+                  gradient: "from-red-500/20 to-pink-500/20"
+                },
+                {
+                  title: "Portal fatigue",
+                  desc: "Clients forget logins, skip training, abandon uploads halfway",
+                  icon: "🔐",
+                  gradient: "from-orange-500/20 to-red-500/20"
+                },
+                {
+                  title: "Zero visibility",
+                  desc: "No idea what's missing, who needs nudging, or when things will arrive",
+                  icon: "👻",
+                  gradient: "from-pink-500/20 to-orange-500/20"
+                }
+              ].map((pain, index) => (
+                <div key={index} className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className={`relative bg-gradient-to-br ${pain.gradient} backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 hover:border-slate-600/50 transition-all duration-300 hover:-translate-y-1`}>
+                    <div className="text-4xl mb-6">{pain.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-4">{pain.title}</h3>
+                    <p className="text-slate-300 leading-relaxed">{pain.desc}</p>
                   </div>
                 </div>
+              ))}
+            </div>
+
+            {/* Impact Statement */}
+            <div className="mt-16 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 to-orange-500/5 rounded-3xl blur-3xl"></div>
+              <div className="relative bg-gradient-to-br from-slate-900/90 to-red-950/20 backdrop-blur-xl border border-red-500/20 rounded-3xl p-8 text-center">
+                <div className="flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">The Real Cost</h3>
+                </div>
+                <p className="text-lg text-red-300 font-semibold">
+                  Late projects • Missed deadlines • Frustrated teams • Unhappy clients
+                </p>
               </div>
             </div>
           </div>
         </div>
 
         {/* What Doc-Chase Is */}
-        <div className="mt-32">
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-3xl blur-3xl"></div>
-            <div className="relative bg-gradient-to-br from-slate-900/80 to-slate-800/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-12">
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
-                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"/>
-                  </svg>
-                  The Solution
-                </div>
-                <h2 className="text-4xl font-bold text-white mb-8">
-                  Your document collection front door
-                </h2>
-              </div>
-              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
-                    </svg>
+        <div className="mt-40 relative">
+          {/* Floating elements */}
+          <div className="absolute -top-20 right-1/4 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute -bottom-20 left-1/3 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-700"></div>
+          
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 backdrop-blur-sm mb-8">
+              <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 animate-pulse"></div>
+              <span className="text-blue-300 font-medium">The Solution</span>
+            </div>
+            <h2 className="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+              Meet your new
+              <br />
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                document front door
+              </span>
+            </h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              One secure link replaces messy email chains, forgotten portals, and endless follow-ups
+            </p>
+          </div>
+
+          <div className="max-w-7xl mx-auto">
+            {/* Main Features */}
+            <div className="grid lg:grid-cols-3 gap-8 mb-16">
+              {[
+                {
+                  title: "Share one link",
+                  desc: "No accounts to create, no passwords to remember, no training required",
+                  icon: "🔗",
+                  gradient: "from-blue-500/20 to-cyan-500/20",
+                  accent: "border-blue-500/30"
+                },
+                {
+                  title: "Email forwarding",
+                  desc: "Clients forward attachments to client@upload.docchase.app—we handle the rest",
+                  icon: "📬",
+                  gradient: "from-purple-500/20 to-blue-500/20",
+                  accent: "border-purple-500/30"
+                },
+                {
+                  title: "Auto-everything",
+                  desc: "Track progress, send reminders, organize files—all happens automatically",
+                  icon: "⚡",
+                  gradient: "from-pink-500/20 to-purple-500/20",
+                  accent: "border-pink-500/30"
+                }
+              ].map((feature, index) => (
+                <div key={index} className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-800/30 to-slate-900/30 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className={`relative bg-gradient-to-br ${feature.gradient} backdrop-blur-xl border ${feature.accent} rounded-3xl p-8 hover:border-opacity-50 transition-all duration-300 hover:-translate-y-2 hover:scale-105`}>
+                    <div className="text-5xl mb-8">{feature.icon}</div>
+                    <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+                    <p className="text-slate-300 leading-relaxed text-lg">{feature.desc}</p>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">One secure link</h3>
-                  <p className="text-slate-300">Share a single link. No accounts, no training, no friction.</p>
                 </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">Email forwarding</h3>
-                  <p className="text-slate-300">Clients can forward attachments to a unique email address.</p>
+              ))}
+            </div>
+
+            {/* How It Works Flow */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-3xl blur-3xl"></div>
+              <div className="relative bg-gradient-to-br from-slate-900/90 to-blue-950/20 backdrop-blur-xl border border-blue-500/20 rounded-3xl p-12">
+                <div className="text-center mb-12">
+                  <h3 className="text-3xl font-bold text-white mb-4">Simple. Powerful. Automatic.</h3>
+                  <p className="text-slate-300 text-lg">Three steps that replace weeks of back-and-forth</p>
                 </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">Auto tracking</h3>
-                  <p className="text-slate-300">See what&apos;s missing, send reminders, export when done.</p>
+                <div className="grid md:grid-cols-3 gap-8">
+                  {[
+                    { step: "01", title: "Create & Share", desc: "Pick a template, set a deadline, share the link" },
+                    { step: "02", title: "Clients Upload", desc: "Drag-drop files or forward emails—no friction" },
+                    { step: "03", title: "We Handle It", desc: "Track progress, send reminders, export when done" }
+                  ].map((step, index) => (
+                    <div key={index} className="text-center relative">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white font-black text-lg">
+                        {step.step}
+                      </div>
+                      <h4 className="text-xl font-bold text-white mb-3">{step.title}</h4>
+                      <p className="text-slate-300">{step.desc}</p>
+                      {index < 2 && (
+                        <div className="hidden md:block absolute top-8 -right-4 w-8 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -613,8 +665,16 @@ export default function Home() {
             <div className="relative bg-gradient-to-br from-slate-900/80 to-slate-800/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-12">
               <div className="text-center mb-12">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6">
-                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"/>
+                  <svg
+                    className="w-4 h-4 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                   Security
                 </div>
@@ -625,39 +685,87 @@ export default function Home() {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 <div className="text-center">
                   <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd"/>
+                    <svg
+                      className="w-7 h-7 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">AWS S3</h3>
-                  <p className="text-slate-400 text-sm">Files encrypted at rest on enterprise infrastructure</p>
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    AWS S3
+                  </h3>
+                  <p className="text-slate-400 text-sm">
+                    Files encrypted at rest on enterprise infrastructure
+                  </p>
                 </div>
                 <div className="text-center">
                   <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" clipRule="evenodd"/>
+                    <svg
+                      className="w-7 h-7 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Secure Links</h3>
-                  <p className="text-slate-400 text-sm">Short-lived presigned URLs for uploads & downloads</p>
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    Secure Links
+                  </h3>
+                  <p className="text-slate-400 text-sm">
+                    Short-lived presigned URLs for uploads & downloads
+                  </p>
                 </div>
                 <div className="text-center">
                   <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                    <svg
+                      className="w-7 h-7 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Access Control</h3>
-                  <p className="text-slate-400 text-sm">Firm-scoped permissions with full activity logs</p>
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    Access Control
+                  </h3>
+                  <p className="text-slate-400 text-sm">
+                    Firm-scoped permissions with full activity logs
+                  </p>
                 </div>
                 <div className="text-center">
                   <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clipRule="evenodd"/>
+                    <svg
+                      className="w-7 h-7 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Data Export</h3>
-                  <p className="text-slate-400 text-sm">Export or delete your data anytime you want</p>
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    Data Export
+                  </h3>
+                  <p className="text-slate-400 text-sm">
+                    Export or delete your data anytime you want
+                  </p>
                 </div>
               </div>
             </div>
