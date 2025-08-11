@@ -62,6 +62,13 @@ export default function Home() {
             </a>
           </div>
 
+          <div className="mt-8 flex items-center justify-center space-x-6">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 backdrop-blur-sm">
+              <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></div>
+              <span className="text-green-300 text-sm font-medium">Onboarding early firms now</span>
+            </div>
+          </div>
+          
           <p className="mt-6 text-sm text-slate-500">
             Private beta. 14-day free trial at launch. No credit card.
           </p>
@@ -1310,45 +1317,57 @@ export default function Home() {
           </a>
         </div>
 
+        {/* Founder Credibility */}
+        <div className="mt-32 text-center">
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-slate-800/50 border border-slate-600/50 backdrop-blur-sm">
+            <span className="text-slate-300">Built by </span>
+            <a 
+              href="https://linkedin.com/in/jasminfajkic" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 font-medium ml-1 transition-colors"
+            >
+              Jasmin
+            </a>
+            <span className="text-slate-300 ml-1">, who spent years chasing documents at professional services firms</span>
+          </div>
+        </div>
+
         {/* FAQ */}
-        <div className="mt-32">
+        <div className="mt-24">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-white mb-8">
               Frequently asked questions
             </h2>
           </div>
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div className="max-w-3xl mx-auto space-y-6">
             {[
               {
-                q: "Do clients need an account?",
-                a: "No. They use a secure link or forward emails to a unique address.",
+                q: "Do clients need accounts?",
+                a: "No. They use a secure link or forward emails—no logins required.",
               },
               {
-                q: "What exactly happens when someone emails a file?",
-                a: "We save the attachments, auto-file them to the right request/month, and update the checklist. You can restrict who's allowed to send.",
-              },
-              {
-                q: "Is this only for accountants?",
-                a: "No. It works for legal intake, HR onboarding, vendor management—any workflow where people owe you documents.",
-              },
-              {
-                q: "Which file types are supported?",
-                a: "PDF, JPG/PNG, DOCX, XLSX by default. You can limit types per checklist item.",
-              },
-              {
-                q: "Will reminders fix unresponsive people?",
-                a: "They won't fix everything, but clear checklists and scheduled nudges reduce back-and-forth significantly.",
+                q: "What's 'forward by email'?",
+                a: "Each client gets a unique email address. They forward attachments, we auto-organize everything.",
               },
               {
                 q: "Where are files stored?",
-                a: "Privately on AWS S3 with encryption at rest and short-lived presigned links. You can download a ZIP, push to Google Drive, or mirror to your server via SFTP.",
+                a: "Privately on AWS S3 with encryption. Download ZIPs or export to your Drive anytime.",
+              },
+              {
+                q: "Can I keep using Drive/email?",
+                a: "Yes. Doc-Chase works alongside your existing tools—it just makes collection easier.",
+              },
+              {
+                q: "When can I start?",
+                a: "We're onboarding early firms now. Join the waitlist for priority access in Q3 2025.",
               },
             ].map((faq, index) => (
-              <div key={index} className="border-b border-slate-800 pb-6">
-                <h3 className="text-lg font-semibold text-white mb-3">
+              <div key={index} className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                <h3 className="text-lg font-bold text-white mb-3">
                   {faq.q}
                 </h3>
-                <p className="text-slate-400">{faq.a}</p>
+                <p className="text-slate-300">{faq.a}</p>
               </div>
             ))}
           </div>
