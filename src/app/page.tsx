@@ -43,11 +43,7 @@ export default function Home() {
           </h1>
 
           <p className="mx-auto mt-8 max-w-4xl text-xl text-slate-300 leading-relaxed">
-            Collect any client or employee documents with a single secure link and a live "what's missing" view—plus automatic reminders.
-          </p>
-          
-          <p className="mx-auto mt-4 max-w-4xl text-lg text-slate-400">
-            Works for accounting, legal intake, and onboarding. Clients can drag-and-drop or forward by email; you track progress in one dashboard.
+            Doc-Chase shows people exactly what to send, lets them upload or forward by email, and reminds them automatically until everything is in. You see a live "what's missing" view and export in one click.
           </p>
 
           <div className="mt-12 flex justify-center">
@@ -64,18 +60,49 @@ export default function Home() {
           </p>
         </div>
 
+        {/* Problem Section */}
+        <div className="mt-32">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-white mb-8">
+              Problem (why this exists)
+            </h2>
+            <div className="max-w-3xl mx-auto space-y-4 text-lg text-slate-300">
+              <p>Collecting documents wastes time and delays work.</p>
+              <p>Email threads get messy and things go missing.</p>
+              <p>Portals are heavy—clients forget logins and don't use them.</p>
+              <p>You can't see what's still missing or who needs a nudge.</p>
+              <p className="text-red-400 font-semibold">Result: late projects, rework, and frustrated teams/clients.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* What Doc-Chase Is */}
+        <div className="mt-32">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-white mb-8">
+              What Doc-Chase is (plain English)
+            </h2>
+            <div className="max-w-4xl mx-auto space-y-4 text-lg text-slate-300">
+              <p>Doc-Chase is a simple front door for collecting any documents from clients, suppliers, or new hires.</p>
+              <p>Share one secure link (no logins). They upload files or forward attachments by email.</p>
+              <p>We track each request, show what's missing, and send polite reminders until it's done.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Why Teams Use It */}
         <div className="mt-32">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-white">
-              Strengths
+              Why teams use it (value in one glance)
             </h2>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
             {[
               {
-                title: "No client logins",
-                desc: "Clients use a secure link; no accounts, no training.",
+                title: "Less chasing",
+                desc: "Reminders handle follow-ups for you.",
                 icon: (
                   <svg
                     className="h-6 w-6"
@@ -93,8 +120,8 @@ export default function Home() {
                 ),
               },
               {
-                title: 'Clear "what\'s missing"',
-                desc: 'Item-level status ends "Did you get it?" threads.',
+                title: "Clarity",
+                desc: "A live checklist ends \"Did you get it?\" ping-pong.",
                 icon: (
                   <svg
                     className="h-6 w-6"
@@ -112,8 +139,8 @@ export default function Home() {
                 ),
               },
               {
-                title: "Reminders that do the chasing",
-                desc: "Polite nudges only for missing items.",
+                title: "On-time files",
+                desc: "Deadlines met without firefighting.",
                 icon: (
                   <svg
                     className="h-6 w-6"
@@ -132,7 +159,7 @@ export default function Home() {
               },
               {
                 title: "Clean handoff",
-                desc: "Download ZIP or push to Google Drive / mirror to your server (SFTP).",
+                desc: "Download ZIP or push to Google Drive / SFTP.",
                 icon: (
                   <svg
                     className="h-6 w-6"
@@ -145,6 +172,25 @@ export default function Home() {
                       strokeLinejoin="round"
                       strokeWidth={2}
                       d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+                    />
+                  </svg>
+                ),
+              },
+              {
+                title: "Great experience",
+                desc: "No accounts, works perfectly on phones.",
+                icon: (
+                  <svg
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
                     />
                   </svg>
                 ),
