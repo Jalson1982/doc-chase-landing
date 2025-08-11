@@ -474,61 +474,61 @@ export default function Home() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-cyan-500/5 rounded-3xl blur-3xl"></div>
               <div className="relative bg-gradient-to-br from-slate-900/90 to-purple-950/20 backdrop-blur-xl border border-purple-500/20 rounded-3xl p-12">
-                                  {/* Flow Steps */}
-                  <div className="grid lg:grid-cols-4 gap-8 mb-16">
-                    {[
-                      {
-                        step: "01",
-                        title: "Unique Address",
-                        desc: "Each client gets their own email address",
-                        icon: "📧",
-                        gradient: "from-purple-500/20 to-pink-500/20",
-                      },
-                      {
-                        step: "02",
-                        title: "Client Forwards",
-                        desc: "Attachments extracted automatically from emails",
-                        icon: "↗️",
-                        gradient: "from-pink-500/20 to-cyan-500/20",
-                      },
-                      {
-                        step: "03",
-                        title: "Smart Filing",
-                        desc: "Auto-categorized by AI matching algorithms",
-                        icon: "🎯",
-                        gradient: "from-cyan-500/20 to-blue-500/20",
-                      },
-                      {
-                        step: "04",
-                        title: "You're Notified",
-                        desc: "Real-time updates appear in your dashboard",
-                        icon: "✨",
-                        gradient: "from-blue-500/20 to-purple-500/20",
-                      },
-                    ].map((item, index) => (
-                      <div key={index} className="group relative h-full">
-                        <div className="absolute inset-0 bg-gradient-to-br from-slate-800/30 to-slate-900/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                        <div
-                          className={`relative bg-gradient-to-br ${item.gradient} backdrop-blur-xl border border-purple-500/20 rounded-2xl p-6 hover:border-purple-400/30 transition-all duration-300 hover:-translate-y-2 h-full flex flex-col`}
-                        >
-                          <div className="flex items-center justify-between mb-6">
-                            <div className="text-3xl">{item.icon}</div>
-                            <div className="text-purple-300 font-bold text-sm">
-                              {item.step}
-                            </div>
-                          </div>
-                          <div className="flex-1 flex flex-col justify-center">
-                            <h3 className="text-lg font-bold text-white mb-3">
-                              {item.title}
-                            </h3>
-                            <p className="text-slate-300 text-sm leading-relaxed">
-                              {item.desc}
-                            </p>
+                {/* Flow Steps */}
+                <div className="grid lg:grid-cols-4 gap-8 mb-16">
+                  {[
+                    {
+                      step: "01",
+                      title: "Unique Address",
+                      desc: "Each client gets their own email address",
+                      icon: "📧",
+                      gradient: "from-purple-500/20 to-pink-500/20",
+                    },
+                    {
+                      step: "02",
+                      title: "Client Forwards",
+                      desc: "Attachments extracted automatically from emails",
+                      icon: "↗️",
+                      gradient: "from-pink-500/20 to-cyan-500/20",
+                    },
+                    {
+                      step: "03",
+                      title: "Smart Filing",
+                      desc: "Auto-categorized by AI matching algorithms",
+                      icon: "🎯",
+                      gradient: "from-cyan-500/20 to-blue-500/20",
+                    },
+                    {
+                      step: "04",
+                      title: "You're Notified",
+                      desc: "Real-time updates appear in your dashboard",
+                      icon: "✨",
+                      gradient: "from-blue-500/20 to-purple-500/20",
+                    },
+                  ].map((item, index) => (
+                    <div key={index} className="group relative h-full">
+                      <div className="absolute inset-0 bg-gradient-to-br from-slate-800/30 to-slate-900/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                      <div
+                        className={`relative bg-gradient-to-br ${item.gradient} backdrop-blur-xl border border-purple-500/20 rounded-2xl p-6 hover:border-purple-400/30 transition-all duration-300 hover:-translate-y-2 h-full flex flex-col`}
+                      >
+                        <div className="flex items-center justify-between mb-6">
+                          <div className="text-3xl">{item.icon}</div>
+                          <div className="text-purple-300 font-bold text-sm">
+                            {item.step}
                           </div>
                         </div>
+                        <div className="flex-1 flex flex-col justify-center">
+                          <h3 className="text-lg font-bold text-white mb-3">
+                            {item.title}
+                          </h3>
+                          <p className="text-slate-300 text-sm leading-relaxed">
+                            {item.desc}
+                          </p>
+                        </div>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
+                </div>
 
                 {/* Key Features */}
                 <div className="grid md:grid-cols-2 gap-8">
