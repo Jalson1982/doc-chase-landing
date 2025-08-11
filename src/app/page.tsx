@@ -10,7 +10,7 @@ export default function Home() {
       <div className="relative">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-blue-900/20"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]"></div>
-        
+
         {/* Animated background elements */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -47,7 +47,10 @@ export default function Home() {
           </h1>
 
           <p className="mx-auto mt-8 max-w-4xl text-xl text-slate-300 leading-relaxed">
-            Doc-Chase shows people exactly what to send, lets them upload or forward by email, and reminds them automatically until everything is in. You see a live &quot;what&apos;s missing&quot; view and export in one click.
+            Doc-Chase shows people exactly what to send, lets them upload or
+            forward by email, and reminds them automatically until everything is
+            in. You see a live &quot;what&apos;s missing&quot; view and export
+            in one click.
           </p>
 
           <div className="mt-12 flex justify-center">
@@ -66,30 +69,116 @@ export default function Home() {
 
         {/* Problem Section */}
         <div className="mt-32">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-8">
-              Problem (why this exists)
-            </h2>
-            <div className="max-w-3xl mx-auto space-y-4 text-lg text-slate-300">
-              <p>Collecting documents wastes time and delays work.</p>
-              <p>Email threads get messy and things go missing.</p>
-              <p>Portals are heavy—clients forget logins and don&apos;t use them.</p>
-              <p>You can&apos;t see what&apos;s still missing or who needs a nudge.</p>
-              <p className="text-red-400 font-semibold">Result: late projects, rework, and frustrated teams/clients.</p>
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 to-orange-500/5 rounded-3xl blur-3xl"></div>
+            <div className="relative bg-gradient-to-br from-slate-900/80 to-slate-800/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-12">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-medium mb-6">
+                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
+                  </svg>
+                  The Problem
+                </div>
+                <h2 className="text-4xl font-bold text-white mb-8">
+                  Document collection is broken
+                </h2>
+              </div>
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Time wasted chasing</h3>
+                      <p className="text-slate-300">Email threads get messy, things go missing, deadlines slip.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Portals don&apos;t work</h3>
+                      <p className="text-slate-300">Clients forget logins, training is required, adoption is low.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">No visibility</h3>
+                      <p className="text-slate-300">You can&apos;t see what&apos;s missing or who needs a nudge.</p>
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/20 rounded-xl p-4">
+                    <div className="flex items-center space-x-3">
+                      <svg className="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
+                      </svg>
+                      <span className="text-red-400 font-semibold">Result: Late projects, rework, frustrated teams</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* What Doc-Chase Is */}
         <div className="mt-32">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-8">
-              What Doc-Chase is (plain English)
-            </h2>
-            <div className="max-w-4xl mx-auto space-y-4 text-lg text-slate-300">
-              <p>Doc-Chase is a simple front door for collecting any documents from clients, suppliers, or new hires.</p>
-              <p>Share one secure link (no logins). They upload files or forward attachments by email.</p>
-              <p>We track each request, show what&apos;s missing, and send polite reminders until it&apos;s done.</p>
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-3xl blur-3xl"></div>
+            <div className="relative bg-gradient-to-br from-slate-900/80 to-slate-800/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-12">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"/>
+                  </svg>
+                  The Solution
+                </div>
+                <h2 className="text-4xl font-bold text-white mb-8">
+                  Your document collection front door
+                </h2>
+              </div>
+              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">One secure link</h3>
+                  <p className="text-slate-300">Share a single link. No accounts, no training, no friction.</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">Email forwarding</h3>
+                  <p className="text-slate-300">Clients can forward attachments to a unique email address.</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">Auto tracking</h3>
+                  <p className="text-slate-300">See what&apos;s missing, send reminders, export when done.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -210,8 +299,8 @@ export default function Home() {
                 <p className="text-sm text-slate-400 leading-relaxed">
                   {pillar.desc}
                 </p>
-            </div>
-          ))}
+              </div>
+            ))}
           </div>
         </div>
 
@@ -223,19 +312,40 @@ export default function Home() {
             </h2>
             <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-left">
               <div className="text-center">
-                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">1</div>
-                <h3 className="text-lg font-semibold text-white mb-2">Create a checklist</h3>
-                <p className="text-slate-300">Pick a template (Monthly Close, Tax Package, Legal Intake, Onboarding) and a due date.</p>
+                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
+                  1
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  Create a checklist
+                </h3>
+                <p className="text-slate-300">
+                  Pick a template (Monthly Close, Tax Package, Legal Intake,
+                  Onboarding) and a due date.
+                </p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">2</div>
-                <h3 className="text-lg font-semibold text-white mb-2">Share one link (or inbox)</h3>
-                <p className="text-slate-300">Clients upload with no login, or forward attachments to their unique email address (e.g., client@upload.docchase.app).</p>
+                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
+                  2
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  Share one link (or inbox)
+                </h3>
+                <p className="text-slate-300">
+                  Clients upload with no login, or forward attachments to their
+                  unique email address (e.g., client@upload.docchase.app).
+                </p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">3</div>
-                <h3 className="text-lg font-semibold text-white mb-2">We do the chasing</h3>
-                <p className="text-slate-300">The checklist updates automatically, reminders go only to missing items, and you export when done.</p>
+                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
+                  3
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  We do the chasing
+                </h3>
+                <p className="text-slate-300">
+                  The checklist updates automatically, reminders go only to
+                  missing items, and you export when done.
+                </p>
               </div>
             </div>
           </div>
@@ -245,15 +355,31 @@ export default function Home() {
         <div className="mt-32">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-white mb-8">
-              &quot;Forward by email&quot; (make this crystal clear)
+              How email forwarding works
             </h2>
             <div className="max-w-4xl mx-auto space-y-6 text-lg text-slate-300 text-left">
               <div className="bg-slate-800/50 rounded-lg p-6">
-                <p className="mb-4">Each client/vendor gets a unique email (e.g., <span className="text-blue-400 font-mono">client@upload.docchase.app</span>).</p>
-                <p className="mb-4">When they forward or CC that address, we save the attachments (<span className="text-slate-400">email body ignored</span>).</p>
-                <p className="mb-4">Files are auto-filed to the correct request/month; unknowns go to Uncategorized for one-click assign.</p>
-                <p className="mb-4">You can allowlist who&apos;s permitted to send.</p>
-                <p className="text-slate-400">(Prefer link-only? Turn email off per client.)</p>
+                <p className="mb-4">
+                  Each client/vendor gets a unique email (e.g.,{" "}
+                  <span className="text-blue-400 font-mono">
+                    client@upload.docchase.app
+                  </span>
+                  ).
+                </p>
+                <p className="mb-4">
+                  When they forward or CC that address, we save the attachments
+                  (<span className="text-slate-400">email body ignored</span>).
+                </p>
+                <p className="mb-4">
+                  Files are auto-filed to the correct request/month; unknowns go
+                  to Uncategorized for one-click assign.
+                </p>
+                <p className="mb-4">
+                  You can allowlist who&apos;s permitted to send.
+                </p>
+                <p className="text-slate-400">
+                  (Prefer link-only? Turn email off per client.)
+                </p>
               </div>
             </div>
           </div>
@@ -265,7 +391,9 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-white">
               Two simple ways to send files
             </h2>
-            <p className="text-slate-300 text-lg mt-4">Use either—or both. Everything lands in the same checklist.</p>
+            <p className="text-slate-300 text-lg mt-4">
+              Use either—or both. Everything lands in the same checklist.
+            </p>
           </div>
 
           <div className="grid gap-12 lg:grid-cols-2">
@@ -291,7 +419,9 @@ export default function Home() {
                 </h3>
               </div>
               <p className="text-slate-300 mb-4">
-                Share one secure link. Clients or employees drag-and-drop from phone or desktop. We mark each request Received and show what&apos;s still missing.
+                Share one secure link. Clients or employees drag-and-drop from
+                phone or desktop. We mark each request Received and show
+                what&apos;s still missing.
               </p>
             </div>
 
@@ -317,12 +447,30 @@ export default function Home() {
                 </h3>
               </div>
               <div className="text-slate-300 space-y-3">
-                <p>Give each client/vendor a unique address like <span className="text-purple-400 font-mono">client@upload.docchase.app</span>.</p>
-                <p>• <strong>Forward or CC</strong> that address</p>
-                <p>• We save <strong>attachments only</strong> (email body ignored)</p>
-                <p>• <strong>Auto-file</strong> to the right checklist/month</p>
-                <p>• <strong>Allowlist</strong> who&apos;s allowed to send (others get a polite rejection)</p>
-                <p className="text-slate-400 text-sm">(Prefer link-only? Turn email off per client.)</p>
+                <p>
+                  Give each client/vendor a unique address like{" "}
+                  <span className="text-purple-400 font-mono">
+                    client@upload.docchase.app
+                  </span>
+                  .
+                </p>
+                <p>
+                  • <strong>Forward or CC</strong> that address
+                </p>
+                <p>
+                  • We save <strong>attachments only</strong> (email body
+                  ignored)
+                </p>
+                <p>
+                  • <strong>Auto-file</strong> to the right checklist/month
+                </p>
+                <p>
+                  • <strong>Allowlist</strong> who&apos;s allowed to send
+                  (others get a polite rejection)
+                </p>
+                <p className="text-slate-400 text-sm">
+                  (Prefer link-only? Turn email off per client.)
+                </p>
               </div>
             </div>
           </div>
@@ -332,24 +480,40 @@ export default function Home() {
         <div className="mt-32">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-white mb-8">
-              Who it&apos;s for (keep it broad, not generic)
+              Built for professional services
             </h2>
             <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="bg-slate-800/50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-white mb-3">Accounting & Bookkeeping</h3>
-                <p className="text-slate-300">Invoices, statements, W-9/1099, prior financials.</p>
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Accounting & Bookkeeping
+                </h3>
+                <p className="text-slate-300">
+                  Invoices, statements, W-9/1099, prior financials.
+                </p>
               </div>
               <div className="bg-slate-800/50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-white mb-3">Legal Intake</h3>
-                <p className="text-slate-300">ID photos, engagement letters, evidence/discovery.</p>
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Legal Intake
+                </h3>
+                <p className="text-slate-300">
+                  ID photos, engagement letters, evidence/discovery.
+                </p>
               </div>
               <div className="bg-slate-800/50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-white mb-3">Employee Onboarding</h3>
-                <p className="text-slate-300">IDs, tax forms, bank details, policy acknowledgements.</p>
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Employee Onboarding
+                </h3>
+                <p className="text-slate-300">
+                  IDs, tax forms, bank details, policy acknowledgements.
+                </p>
               </div>
               <div className="bg-slate-800/50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-white mb-3">Vendor Management / AP</h3>
-                <p className="text-slate-300">Monthly supplier invoices and proofs.</p>
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Vendor Management / AP
+                </h3>
+                <p className="text-slate-300">
+                  Monthly supplier invoices and proofs.
+                </p>
               </div>
             </div>
           </div>
@@ -365,15 +529,32 @@ export default function Home() {
               <div className="bg-slate-800/50 rounded-lg p-8">
                 <div className="grid md:grid-cols-2 gap-6 text-slate-300">
                   <div>
-                    <p className="mb-4">Most people snap photos instead of scanning.</p>
-                    <p className="mb-4">Open camera directly from the link; multi-page upload.</p>
-                    <p>Auto-optimize: crop, deskew, compress; HEIC/JPG/PNG → PDF if you want.</p>
+                    <p className="mb-4">
+                      Most people snap photos instead of scanning.
+                    </p>
+                    <p className="mb-4">
+                      Open camera directly from the link; multi-page upload.
+                    </p>
+                    <p>
+                      Auto-optimize: crop, deskew, compress; HEIC/JPG/PNG → PDF
+                      if you want.
+                    </p>
                   </div>
                   <div>
-                    <p className="mb-4"><strong>Privacy:</strong> EXIF stripped on upload.</p>
+                    <p className="mb-4">
+                      <strong>Privacy:</strong> EXIF stripped on upload.
+                    </p>
                     <div className="flex items-center space-x-2 text-green-400">
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      <svg
+                        className="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
                       </svg>
                       <span>Works perfectly on phones</span>
                     </div>
@@ -392,21 +573,34 @@ export default function Home() {
             </h2>
             <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-left">
               <div className="bg-slate-800/50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-red-400 mb-3">Email alone</h3>
-                <p className="text-slate-300">Chaos, no tracking, manual chasing.</p>
+                <h3 className="text-lg font-semibold text-red-400 mb-3">
+                  Email alone
+                </h3>
+                <p className="text-slate-300">
+                  Chaos, no tracking, manual chasing.
+                </p>
               </div>
               <div className="bg-slate-800/50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-red-400 mb-3">Shared drives</h3>
-                <p className="text-slate-300">No &quot;what&apos;s missing,&quot; no reminders.</p>
+                <h3 className="text-lg font-semibold text-red-400 mb-3">
+                  Shared drives
+                </h3>
+                <p className="text-slate-300">
+                  No &quot;what&apos;s missing,&quot; no reminders.
+                </p>
               </div>
               <div className="bg-slate-800/50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-red-400 mb-3">Portals</h3>
-                <p className="text-slate-300">Logins and training most clients won&apos;t do.</p>
+                <h3 className="text-lg font-semibold text-red-400 mb-3">
+                  Portals
+                </h3>
+                <p className="text-slate-300">
+                  Logins and training most clients won&apos;t do.
+                </p>
               </div>
             </div>
             <div className="mt-8 bg-green-900/20 border border-green-500/30 rounded-lg p-6">
               <p className="text-green-400 font-semibold text-lg">
-                Doc-Chase combines frictionless intake (no login) with tracking + reminders built in.
+                Doc-Chase combines frictionless intake (no login) with tracking
+                + reminders built in.
               </p>
             </div>
           </div>
@@ -414,13 +608,58 @@ export default function Home() {
 
         {/* Security */}
         <div className="mt-32">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-8">Security (plain English)</h2>
-            <div className="max-w-3xl mx-auto space-y-4 text-lg text-slate-300 text-left">
-              <p>• Files on AWS S3, encrypted at rest.</p>
-              <p>• Short-lived presigned links for uploads/downloads.</p>
-              <p>• Firm-scoped access and activity logs.</p>
-              <p>• Export or delete your data anytime.</p>
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-emerald-500/5 rounded-3xl blur-3xl"></div>
+            <div className="relative bg-gradient-to-br from-slate-900/80 to-slate-800/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-12">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6">
+                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"/>
+                  </svg>
+                  Security
+                </div>
+                <h2 className="text-4xl font-bold text-white mb-8">
+                  Enterprise-grade protection
+                </h2>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div className="text-center">
+                  <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">AWS S3</h3>
+                  <p className="text-slate-400 text-sm">Files encrypted at rest on enterprise infrastructure</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" clipRule="evenodd"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Secure Links</h3>
+                  <p className="text-slate-400 text-sm">Short-lived presigned URLs for uploads & downloads</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Access Control</h3>
+                  <p className="text-slate-400 text-sm">Firm-scoped permissions with full activity logs</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clipRule="evenodd"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Data Export</h3>
+                  <p className="text-slate-400 text-sm">Export or delete your data anytime you want</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -428,10 +667,14 @@ export default function Home() {
         {/* Pricing */}
         <div className="mt-32">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-8">Pricing (pre-launch)</h2>
+            <h2 className="text-3xl font-bold text-white mb-8">
+              Pricing (pre-launch)
+            </h2>
             <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
               <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-8">
-                <h3 className="text-2xl font-bold text-white mb-4">Solo — $49 / month</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Solo — $49 / month
+                </h3>
                 <div className="space-y-2 text-slate-300 mb-6">
                   <p>1 user</p>
                   <p>Up to 100 file uploads/month</p>
@@ -441,7 +684,9 @@ export default function Home() {
                 </div>
               </div>
               <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-8">
-                <h3 className="text-2xl font-bold text-white mb-4">Team — $149 / month</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Team — $149 / month
+                </h3>
                 <div className="space-y-2 text-slate-300 mb-6">
                   <p>Up to 5 users</p>
                   <p>Up to 1,000 file uploads/month</p>
@@ -451,10 +696,14 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-8 space-y-4 text-slate-400">
-              <p>An upload is one file sent via link or email. Most small teams stay well under these limits.</p>
+              <p>
+                An upload is one file sent via link or email. Most small teams
+                stay well under these limits.
+              </p>
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-900/20 border border-green-500/30 text-green-400 text-sm font-medium">
                 <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
-                Founding firms: first 2 months $29 (Solo) / $99 (Team). Limited seats.
+                Founding firms: first 2 months $29 (Solo) / $99 (Team). Limited
+                seats.
               </div>
             </div>
           </div>
@@ -473,7 +722,9 @@ export default function Home() {
         {/* FAQ */}
         <div className="mt-32">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-8">FAQ (short and direct)</h2>
+            <h2 className="text-3xl font-bold text-white mb-8">
+              Frequently asked questions
+            </h2>
           </div>
           <div className="max-w-4xl mx-auto space-y-8">
             {[
@@ -519,7 +770,8 @@ export default function Home() {
                 Get Early Access
               </h2>
               <p className="mt-4 text-lg text-blue-100">
-                Join the private beta. We&apos;ll invite firms in small batches (14-day free trial at launch).
+                Join the private beta. We&apos;ll invite firms in small batches
+                (14-day free trial at launch).
               </p>
             </div>
 
@@ -662,8 +914,13 @@ export default function Home() {
 
         {/* Bottom CTA */}
         <div className="mt-32 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Get Early Access</h2>
-          <p className="text-lg text-slate-300 mb-8">Join the private beta. We&apos;ll invite firms in small batches (14-day free trial at launch).</p>
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Get Early Access
+          </h2>
+          <p className="text-lg text-slate-300 mb-8">
+            Join the private beta. We&apos;ll invite firms in small batches
+            (14-day free trial at launch).
+          </p>
           <a
             href="#waitlist"
             className="inline-flex items-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 text-lg font-bold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105"
