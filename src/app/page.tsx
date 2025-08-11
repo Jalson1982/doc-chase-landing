@@ -39,15 +39,15 @@ export default function Home() {
           </div>
 
           <h1 className="text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
-            One link. Zero logins.
-            <br />
-            Documents on time.
+            One link. Zero logins. Documents on time.
           </h1>
 
-          <p className="mx-auto mt-8 max-w-3xl text-xl text-slate-300 leading-relaxed">
-            Doc-Chase collects any client documents with a single secure link
-            and a live what&apos;s missing view—plus automatic reminders. Built
-            for accountants & bookkeepers.
+          <p className="mx-auto mt-8 max-w-4xl text-xl text-slate-300 leading-relaxed">
+            Collect any client or employee documents with a single secure link and a live "what's missing" view—plus automatic reminders.
+          </p>
+          
+          <p className="mx-auto mt-4 max-w-4xl text-lg text-slate-400">
+            Works for accounting, legal intake, and onboarding. Clients can drag-and-drop or forward by email; you track progress in one dashboard.
           </p>
 
           <div className="mt-12 flex justify-center">
@@ -67,7 +67,7 @@ export default function Home() {
         <div className="mt-32">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-white">
-              Why teams switch to Doc-Chase
+              Strengths
             </h2>
           </div>
 
@@ -113,7 +113,7 @@ export default function Home() {
               },
               {
                 title: "Reminders that do the chasing",
-                desc: "Polite, scheduled nudges for only the missing items.",
+                desc: "Polite nudges only for missing items.",
                 icon: (
                   <svg
                     className="h-6 w-6"
@@ -132,7 +132,7 @@ export default function Home() {
               },
               {
                 title: "Clean handoff",
-                desc: "Download everything as a ZIP, or push to Google Drive / mirror to your server (SFTP).",
+                desc: "Download ZIP or push to Google Drive / mirror to your server (SFTP).",
                 icon: (
                   <svg
                     className="h-6 w-6"
@@ -160,8 +160,8 @@ export default function Home() {
                 <p className="text-sm text-slate-400 leading-relaxed">
                   {pillar.desc}
                 </p>
-              </div>
-            ))}
+            </div>
+          ))}
           </div>
         </div>
 
@@ -458,7 +458,7 @@ export default function Home() {
                   {useCase.items.map((item, i) => (
                     <li key={i} className="text-sm text-slate-400">
                       • {item}
-                    </li>
+            </li>
                   ))}
                 </ul>
               </div>
@@ -594,7 +594,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-white">
               Pricing (pre-launch)
             </h2>
-          </div>
+        </div>
 
           <div className="grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto">
             <div className="rounded-xl border border-slate-700 bg-slate-900/50 p-8 text-center">
@@ -695,14 +695,14 @@ export default function Home() {
             <div className="text-center">
               <h2 className="text-3xl font-bold text-white">
                 Get Early Access
-              </h2>
+            </h2>
               <p className="mt-4 text-lg text-blue-100">
                 Join the private beta. We&apos;ll invite firms in small batches.
-              </p>
+            </p>
             </div>
 
             <div className="mt-12 max-w-lg mx-auto">
-              <form
+            <form
                 className="space-y-6"
                 id="waitlist-form"
                 onSubmit={(e) => {
@@ -777,18 +777,18 @@ export default function Home() {
                       );
                     });
                 }}
-              >
-                <input
+            >
+              <input
                   name="work_email"
-                  type="email"
-                  required
+                type="email"
+                required
                   placeholder="you@firm.com"
                   className="w-full rounded-xl border border-slate-600 bg-slate-800/50 text-white placeholder-slate-400 px-4 py-4 outline-none focus:ring-2 focus:ring-white/50"
-                />
+              />
 
-                <input
-                  name="firm_size"
-                  type="text"
+              <input
+                name="firm_size"
+                type="text"
                   placeholder="e.g., 1, 3, 7"
                   className="w-full rounded-xl border border-slate-600 bg-slate-800/50 text-white placeholder-slate-400 px-4 py-4 outline-none focus:ring-2 focus:ring-white/50"
                 />
@@ -804,34 +804,34 @@ export default function Home() {
                   <option value="Audit PBC">Audit PBC</option>
                 </select>
 
-                <select
-                  name="preferred_intake"
+              <select
+                name="preferred_intake"
                   className="w-full rounded-xl border border-slate-600 bg-slate-800/50 text-white px-4 py-4 outline-none focus:ring-2 focus:ring-white/50"
                 >
                   <option value="">Preferred intake</option>
                   <option value="Email inbox">Email inbox</option>
                   <option value="Link upload">Link upload</option>
                   <option value="Both">Both</option>
-                </select>
+              </select>
 
-                <input
+              <input
                   name="document_types"
-                  type="text"
+                type="text"
                   placeholder="Invoices, statements, W-9…"
                   className="w-full rounded-xl border border-slate-600 bg-slate-800/50 text-white placeholder-slate-400 px-4 py-4 outline-none focus:ring-2 focus:ring-white/50"
-                />
+              />
 
-                <button
-                  type="submit"
+              <button
+                type="submit"
                   className="w-full rounded-xl bg-white text-blue-600 px-8 py-4 text-lg font-bold transition-all hover:bg-blue-50 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
+              >
                   Get Early Access
-                </button>
+              </button>
 
                 <p className="text-center text-sm text-blue-200">
                   We&apos;ll only email about early access and product updates.
-                </p>
-              </form>
+              </p>
+            </form>
             </div>
           </div>
         </div>
